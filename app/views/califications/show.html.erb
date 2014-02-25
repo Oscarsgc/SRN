@@ -1,0 +1,11 @@
+<p>
+  <strong>Trabajo:</strong>
+  <%= @calification.name%>
+</p>
+ 
+<p>
+  <strong>Ponderacion:</strong>
+  <%= @calification.ponderation%>
+</p>
+<%= link_to 'Volver', califications_path %>
+| <%= link_to 'Editar', edit_calification_path(@calification) %>

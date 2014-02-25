@@ -1,0 +1,20 @@
+<h1>Nueva Calificacion</h1>
+<%= form_for :calification, url: califications_path do |f| %>
+	<div class="row">
+  		<div class="span6 offset3">
+  			<p>
+    			<%= f.label :name, "Nombre" %>
+    			<%= f.text_field :name %><br>
+  			</p>
+ 
+  			<p>
+    			<%= f.label :ponderation, "Ponderacion" %>
+    			<%= f.text_field :ponderation %><br>
+  			</p>
+ 			<p>
+    			<%= f.submit "Guardar", class: "btn btn-large btn-primary" %>
+			</p>
+		</div>
+  </div>
+<% end %>
+<%= link_to 'Volver', califications_path %>
