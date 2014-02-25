@@ -11,14 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140225160026) do
+ActiveRecord::Schema.define(version: 20140225194017) do
 
   create_table "califications", force: true do |t|
     t.string   "name"
     t.integer  "ponderation"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "califications", ["user_id"], name: "index_califications_on_user_id"
+
+  create_table "notes", force: true do |t|
+    t.integer  "grade"
+    t.integer  "calification_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "notes", ["calification_id"], name: "index_notes_on_calification_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

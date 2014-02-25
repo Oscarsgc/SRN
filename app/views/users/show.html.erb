@@ -1,0 +1,19 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <h1>
+    <%= @user.name %><br>
+  </h1>
+  <strong>Email:</strong>
+  <%= @user.email %><br>
+  <strong>Telefono:</strong>
+  <%= @user.phone %><br>
+  <strong>Fecha de Nacimiento:</strong>
+  <%= @user.birthday %><br>
+  <strong>Rol:</strong>
+  <%= @user.rol %><br><br>
+  <%if current_user.id==@user.id%>
+    <%= link_to 'Editar', edit_user_path(@user) %> |
+  <%end%>
+<%= link_to 'Volver', users_path %>
+</div>
+

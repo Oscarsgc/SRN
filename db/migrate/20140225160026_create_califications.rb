@@ -3,7 +3,7 @@ class CreateCalifications < ActiveRecord::Migration
     create_table :califications do |t|
       t.string :name
       t.integer :ponderation
-
+      t.references :user, index: true
       t.timestamps
     end
   end

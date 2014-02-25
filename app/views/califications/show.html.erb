@@ -1,11 +1,15 @@
+<% title @calification.name %>
+<H1>Calificacion</H1>
+<CENTER>
 <p>
-  <strong>Trabajo:</strong>
+  <strong>Trabajo:</strong><br>
   <%= @calification.name%>
 </p>
  
 <p>
-  <strong>Ponderacion:</strong>
+  <strong>Ponderacion:</strong><br>
   <%= @calification.ponderation%>
 </p>
+</CENTER>
 <%= link_to 'Volver', califications_path %>
 | <%= link_to 'Editar', edit_calification_path(@calification) %>

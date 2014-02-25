@@ -6,8 +6,13 @@ gem 'will_paginate', '3.0.4'
 gem 'bootstrap-sass', '2.3.2.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', group: [:development, :test]
-gem 'pg', group: [:production]
+group :development do
+  gem 'sqlite3', '1.3.8'
+end
+group :production do
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor', '0.0.2'
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -23,6 +28,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'bootstrap-will_paginate', '0.0.9'
 
 gem 'nifty-generators'
 gem 'protected_attributes'
