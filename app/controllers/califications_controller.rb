@@ -4,12 +4,16 @@ class CalificationsController < ApplicationController
  
   	def create
   		@calification = Calification.new(params[:calification])
-		if	@calification.save
-  			redirect_to @calification
+		  if	@calification.save
+  		  redirect_to @calification
   		else
   			render 'new'
   		end
   	end
+
+    def calificate 
+      @nota = Nota.new
+    end
 
     def edit
       @calification = Calification.find(params[:id])

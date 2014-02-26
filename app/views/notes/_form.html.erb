@@ -1,0 +1,9 @@
+<%= form_for([@calification, @calification.notes.build]) do |f| %>
+	<p>
+    	<!--strong--><!--%= f.label :grade, " " %><br /></strong-->
+   		<%= f.text_field :grade %>
+	</p>
+  	<p>
+   		<%= f.submit "Guardar Nota", class: "btn btn-large btn-primary" %>
+	</p>
+<% end %>

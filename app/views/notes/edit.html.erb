@@ -1,0 +1,14 @@
+<%= form_for([@calification, @note]) do |f| %>
+	<div class="row">
+  		<div class="span6 offset3">
+  			<p>
+    			<strong><%= f.label :grade, "Calificacion " %><br /></strong>
+   				<%= f.text_field :grade %>
+			</p>
+  			<p>
+   				<%= f.submit "Guardar Nota", class: "btn btn-large btn-primary" %>
+			</p>
+  		</div>
+  	</div>
+<%end%>
+<%= link_to 'Volver', califications_path %>

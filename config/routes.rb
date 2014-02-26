@@ -12,6 +12,7 @@ SRN::Application.routes.draw do
 
 
   root to: "static_pages#home"
+
   resources :users
   resources :califications do
     resources :notes
