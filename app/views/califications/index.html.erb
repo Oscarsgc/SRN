@@ -1,22 +1,24 @@
-<% title "Evaluacion" %>
+<% title "Calificacion" %>
 <h1>Evaluacion</h1>
- 
-<table>
-  <tr>
-    <th>Nombre Trabajo</th>
-    <th>Ponderacion</th>
-  </tr>
- 
-  <% @califications.each do |calification| %>
-    <tr>
-      <td><%= calification.name %></td>
-      <td><%= calification.ponderation %></td>
-      <td><%= link_to 'Ver', calification %></td>
-      <td><%= link_to 'Editar', edit_calification_path(calification) %></td>
-      <td><%= link_to 'Eliminar', calification_path(calification),
-                    method: :delete, data: { confirm: 'Seguro de eliminar calificacion?' } %></td>
-    </tr>
+ <CENTER>
+<table border=3>
+<tr>
+    <% @califications.each do |calification| %>
+    <th>
+        <Center><Strong><%= calification.name %></Strong></Center>
+        <Center><%= calification.ponderation %></Center>
+    </th>
   <% end %>
+</tr>
+<tr>
+  <% @califications.each do |calification| %>
+    <th>
+        <Center><%=render calification.notes %></Center>
+        <%= link_to "Editar Nota", edit_calification_note_path(calification, note) %>
+    </th>
+    <% end %>
+</tr>
 </table>
 <br><br>
+</CENTER>
 <%= link_to 'Agregar Calificacion', new_calification_path, class: "btn btn-large btn-primary" %>

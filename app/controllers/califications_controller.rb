@@ -11,6 +11,10 @@ class CalificationsController < ApplicationController
   		end
   	end
 
+    def user_calif
+      @califications = Calification.all
+    end
+
     def calificate 
       @nota = Nota.new
     end

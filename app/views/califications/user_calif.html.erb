@@ -1,0 +1,28 @@
+<% title "Calificacion" %>
+<h1>Evaluacion</h1>
+ <CENTER>
+<table border=3>
+  <tr>
+    <th><Center>Nombre Trabajo</Center></th>
+    <th><Center>Ponderacion</Center></th>
+  </tr>
+ 
+  <% @califications.each do |calification| %>
+    <tr>
+      <td>
+        <Center><%= calification.name %></Center><br>
+        <Center><%= calification.ponderation %></Center>
+        <%if current_user.rol=='Docente' && @calification.notes.count <1 %>
+          <%= render "notes/form" %>
+      <%end%>
+      </td>
+      <td><Center><%= link_to 'Ver', calification %></Center></td>
+      <%if current_user.rol=='Docente'%>
+      <td><Center><%= link_to 'Editar', edit_calification_path(calification) %></Center></td>
+      <%end%>
+    </tr>
+  <% end %>
+</table>
+<br><br>
+</CENTER>
+<%= link_to 'Agregar Calificacion', new_calification_path, class: "btn btn-large btn-primary" %>
