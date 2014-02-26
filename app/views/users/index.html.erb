@@ -1,0 +1,20 @@
+<% title "Estudiantes" %>
+<h1>Todos los estudiantes</h1>
+ 
+<table>
+  <tr>
+    <th><Center>Nombre</Center></th>
+    <th><Center>Telefono</Center></th>
+  </tr>
+ 
+  <% @users.each do |user| %>
+    <%if user.rol=='Estudiante'%>
+        <tr>
+          <td><Center><%= link_to user.name, user %></Center></td>
+          <td><Center><%= user.phone %></Center></td>
+        </tr>
+    <% end %>    
+  <% end %>
+</table>
+<br><br>
+<%= link_to 'Volver', root_url%>
